@@ -9,7 +9,11 @@ AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
     local ip = GetPlayerEndpoint(player)
     local tokens = GetPlayerTokens(player)
 
-    print("^3[Prestige]: " .. name, discord, steam, license, ip, tokens)
+    print("^3[Prestige]: " .. "Name: " .. name .. "Discord: " .. discord .. "Steam: " .. steam .. "License: " .. license .. "IP: " .. ip)
+    print("^3[Prestige]: Tokens:") 
+    for k, v in pairs(tokens) do
+        print(k, ":", v)
+    end
 
     deferrals.done("NOPE!")
 end)
