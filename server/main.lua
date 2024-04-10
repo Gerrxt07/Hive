@@ -1,4 +1,4 @@
-AddEventHandler('playerConnecting', function()
+AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
     local player = source
 
     local name = GetPlayerName(player)
@@ -9,7 +9,7 @@ AddEventHandler('playerConnecting', function()
     local ip = GetPlayerEndpoint(player)
     local tokens = GetPlayerTokens(player)
 
-    print(name, discord, steam, license, ip, tokens)
+    print("^3[Prestige]: " .. name, discord, steam, license, ip, tokens)
 
     deferrals.done("NOPE!")
 end)
