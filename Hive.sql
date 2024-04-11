@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `hiveuser` (
   `IP` VARCHAR(255) NOT NULL,  -- IP Address (last known)
   `Admin` VARCHAR(8) NOT NULL DEFAULT 'false', -- Admin (true/false)
   PRIMARY KEY (`ID`), -- Primary key of the table
-  UNIQUE KEY `Discord` (`Discord`) -- Unique key for the Discord ID
+  UNIQUE KEY `Discord` (`Discord`), -- Unique key for the Discord ID
   UNIQUE KEY `ID` (`ID`) -- Unique key for the ID
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
