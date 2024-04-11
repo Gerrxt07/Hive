@@ -11,7 +11,7 @@ function SendWebhook(webhookURL, message)
     
 end
 
-function PlayerConnecting(name, deferrals)
+function PlayerConnecting(name, setKickReason, deferrals)
     local player = source
     local identifiers = GetPlayerIdentifiers(player)
     
