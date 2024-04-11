@@ -2,7 +2,7 @@ AddEventHandler("onResourceStart", function()
     if config.check_for_updates == true then
 
         local currentVersion = config.version
-        PerformHttpRequest("https://api.github.com/repos/Gerrxt07/Prestige/releases/latest", function(responseCode, resultData, resultHeaders)
+        PerformHttpRequest("https://api.github.com/repos/Gerrxt07/Hive/releases/latest", function(responseCode, resultData, resultHeaders)
             if responseCode == 200 then
                 local releaseData = json.decode(resultData)
                 local latestVersion = releaseData.tag_name

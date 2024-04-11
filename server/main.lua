@@ -1,19 +1,37 @@
-AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
+AddEventHandler('playerConnecting', function(err, deferrals)
+    deferrals.defer()
+    deferrals.update("LOCALE: Checking identifier...")
+    Citizen.wait(1000)
+
     local player = source
+    local identifier = GetPlayerIdentifiers(player)
+
+    local steam = false
+    local discord = false
+
+    for k,v in pairs(identifier) do
+        if v:find("steam:") then
+            steam = true
+        end
+        if v:find("discord:") then
+            discord = true
+        end
+    end
+    if not steam then
+        err("LOCALE: Steam required...")
+        CancelEvent()
+        return
+    end
+
+    if not discord then
+        err("LOCALE: Discord required...")
+        CancelEvent()
+        return
+    end
 
     local name = GetPlayerName(player)
-    local discord = GetPlayerIdentifierByType(player, 'discord')
-    local steam = GetPlayerIdentifierByType(player, 'steam')
-    local license = GetPlayerIdentifierByType(player, 'license')
-    
     local ip = GetPlayerEndpoint(player)
     local tokens = GetPlayerTokens(player)
 
-    print("^3[Prestige]: " .. "Name: " .. name .. " Discord: " .. discord .. " Steam: " .. steam .. " License: " .. license .. " IP: " .. ip)
-    print("^3Player Tokens:") 
-    for k, v in pairs(tokens) do
-        print(k, ":", v)
-    end
-
-    deferrals.done("NOPE!")
+    deferrals.done("TEST DEATH END")
 end)
