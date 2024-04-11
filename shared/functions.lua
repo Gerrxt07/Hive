@@ -16,7 +16,7 @@ function PlayerConnecting(name, setKickReason, deferrals)
     local identifiers = GetPlayerIdentifiers(player)
     
     deferrals.defer()
-    deferrals.update("LOCALE: Checking identifier...")
+    deferrals.update(Locales[config.language]['identifier_check'])
     Wait(1000)
 
     local steam = false
@@ -34,12 +34,12 @@ function PlayerConnecting(name, setKickReason, deferrals)
     Wait(100)
     
     if not steam then
-        deferrals.done("LOCALE: Steam required...")
+        deferrals.done(Locales[config.language]['identifier_nosteam'])
         return
     end
 
     if not discord then
-        deferrals.done("LOCALE: Discord required...")
+        deferrals.done(Locales[config.language]['identifier_nodiscord'])
         return
     end
 
