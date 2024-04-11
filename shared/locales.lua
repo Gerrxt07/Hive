@@ -6,6 +6,8 @@ Locales = {
         ['update_server_error'] = '^8[Hive]: There was an error when searching for the latest version.',
         ['script_started'] = '^2[Hive]: The Hive system has started successfully.',
 
+        ['webhook_enabled'] = '^2[Hive]: Your Webhook is enabled.',
+
         -- Player Connecting Area
         ['identifier_check'] = '[Hive]: Your identifiers are being checked...',
         ['identifier_nosteam'] = '[Hive]: Steam is required to play on this server.',
@@ -18,6 +20,8 @@ Locales = {
         ['no_update'] = '^2[Hive]: Dein Script ist auf dem neusten Stand.',
         ['update_server_error'] = '^8[Hive]: Bei der Suche nach der neuesten Version ist ein Fehler aufgetreten.',
         ['script_started'] = '^2[Hive]: Das Hive System wurde erfolgreich gestartet.',
+
+        ['webhook_enabled'] = '^2[Hive]: Das Webhook System ist aktiviert.',
 
         -- Player Connecting Area
         ['identifier_check'] = '[Hive]: Deine Profil wird überprüft...',

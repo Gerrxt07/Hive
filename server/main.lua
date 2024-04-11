@@ -9,14 +9,12 @@ AddEventHandler("onResourceStart", function()
 
     UpdateCheck()
     if config.webhook ~= "" then
-        print("^4Webhook gefunden!")
+        print(Locales[config.language]['webhook_enabled'])
         return
     end
 
     local message = Locales[config.language]['script_started']
-    local discordmessage = string.sub(message, 15)
     print(message)
-    SendWebhook(config.webhook, discordmessage)
 end)
 
 AddEventHandler("playerConnecting", PlayerConnecting)
