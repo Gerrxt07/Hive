@@ -6,15 +6,15 @@ AddEventHandler('onResourceStarting', function(resourceName)
 end)
 
 AddEventHandler("onResourceStart", function()
-
     UpdateCheck()
+
+    local message = Locales[config.language]['script_started']
+    print(message)
+
     if config.webhook ~= "" then
         print(Locales[config.language]['webhook_enabled'])
         return
     end
-
-    local message = Locales[config.language]['script_started']
-    print(message)
 end)
 
 AddEventHandler("playerConnecting", PlayerConnecting)

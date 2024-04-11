@@ -6,6 +6,7 @@ Locales = {
         ['update_server_error'] = '^8[Hive]: There was an error when searching for the latest version.',
         ['script_started'] = '^2[Hive]: The Hive system has started successfully.',
 
+        ['false_name'] = '^2[Hive]: Your script name is not Hive. Please change it to Hive.',
         ['webhook_enabled'] = '^2[Hive]: Your Webhook is enabled.',
 
         -- Player Connecting Area
@@ -21,6 +22,7 @@ Locales = {
         ['update_server_error'] = '^8[Hive]: Bei der Suche nach der neuesten Version ist ein Fehler aufgetreten.',
         ['script_started'] = '^2[Hive]: Das Hive System wurde erfolgreich gestartet.',
 
+        ['false_name'] = '^2[Hive]: Der Script Name ist nicht Hive. Bitte ändere ihn in Hive um.',
         ['webhook_enabled'] = '^2[Hive]: Das Webhook System ist aktiviert.',
 
         -- Player Connecting Area
