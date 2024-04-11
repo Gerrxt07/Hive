@@ -11,7 +11,7 @@ function SendWebhook(webhookURL, message)
     
 end
 
-function PlayerConnecting(name, setKickReason, deferrals, err)
+function PlayerConnecting(name, setKickReason, deferrals)
     local player = source
     local identifiers = GetPlayerIdentifiers(player)
     
@@ -34,13 +34,13 @@ function PlayerConnecting(name, setKickReason, deferrals, err)
     Wait(100)
     
     if not steam then
-        err(Locales[config.language]['identifier_nosteam'])
+        setKickReason(Locales[config.language]['identifier_nosteam'])
         CancelEvent()
         return
     end
 
     if not discord then
-        err(Locales[config.language]['identifier_nodiscord'])
+        setKickReason(Locales[config.language]['identifier_nodiscord'])
         CancelEvent()
         return
     end
