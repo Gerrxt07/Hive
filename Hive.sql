@@ -1,11 +1,11 @@
--- By executing the SQL code you create a new database with finished tables. Please don't use that file if you already have a database for Prestige.
+-- By executing the SQL code you create a new database with finished tables. Please don't use that file if you already have a database for Hive.
 
 -- Creating the Database
-CREATE DATABASE prestige;
-USE prestige;
+CREATE DATABASE hive;
+USE hive;
 
 -- This SQL part creates the user table to save whitelisted players
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `hiveuser` (
   `ID` INT(11) NOT NULL AUTO_INCREMENT, -- Unique ID
   `Name` VARCHAR(255) NOT NULL, -- FiveM Account
   `Discord` VARCHAR(255) NOT NULL, -- Discord ID
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- This SQl part creates the table for the "Guard" system to save banned players.
-CREATE TABLE IF NOT EXISTS `guard` (
+CREATE TABLE IF NOT EXISTS `hivebans` (
   `ID` INT(11) NOT NULL AUTO_INCREMENT, -- Unique ID
   `Reason` TEXT(65535) NOT NULL, -- Reason
   `Name` VARCHAR(255) NOT NULL, -- FiveM Account of the banned user

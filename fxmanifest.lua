@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Gerrxt <gerrxt07@proton.me>'
-description 'The Prestige FiveM System'
+description 'The Hive FiveM System'
 version '1.0.0'
 
 client_scripts {
