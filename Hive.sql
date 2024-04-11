@@ -13,11 +13,12 @@ CREATE TABLE IF NOT EXISTS `hiveuser` (
   `Admin` VARCHAR(8) NOT NULL DEFAULT 'false', -- Admin (true/false)
   PRIMARY KEY (`ID`), -- Primary key of the table
   UNIQUE KEY `Discord` (`Discord`) -- Unique key for the Discord ID
+  UNIQUE KEY `ID` (`ID`) -- Unique key for the ID
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- This SQl part creates the table for the "Guard" system to save banned players.
-CREATE TABLE IF NOT EXISTS `hivebans` (
+CREATE TABLE IF NOT EXISTS `guard` (
   `ID` INT(11) NOT NULL AUTO_INCREMENT, -- Unique ID
   `Reason` TEXT(65535) NOT NULL, -- Reason
   `Name` VARCHAR(255) NOT NULL, -- FiveM Account of the banned user
@@ -26,7 +27,6 @@ CREATE TABLE IF NOT EXISTS `hivebans` (
   `License` VARCHAR(255) NOT NULL, -- License of the banned user
   `IP` VARCHAR(255) NOT NULL, -- IP Address of the banned user
   `Tokens` VARCHAR(5000) NOT NULL, -- Tokens of the banned user
-  `Banned` VARCHAR(8) NOT NULL DEFAULT 'false', -- is player banned (true/false)
   PRIMARY KEY (`ID`) USING BTREE, -- Primary key of the table
   UNIQUE KEY `ID` (`ID`) -- Unique key for the Ban ID
 
