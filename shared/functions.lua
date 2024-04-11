@@ -17,7 +17,7 @@ function PlayerConnecting(name, setKickReason, deferrals)
     
     deferrals.defer()
     deferrals.update("LOCALE: Checking identifier...")
-    Citizen.wait(1000)
+    Wait(1000)
 
     local steam = false
     local discord = false
@@ -31,7 +31,7 @@ function PlayerConnecting(name, setKickReason, deferrals)
         end
     end
 
-    Citizen.wait(100)
+    Wait(100)
     
     if not steam then
         deferrals.done("LOCALE: Steam required...")
