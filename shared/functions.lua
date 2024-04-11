@@ -43,6 +43,8 @@ function PlayerConnecting(name, setKickReason, deferrals)
         return
     end
 
+    -- // TODO Add MYSQL Whitelist Check
+
     deferrals.done("TEST DEATH END")
 end
 
