@@ -57,19 +57,19 @@ function UpdateCheck()
 
                 if currentVersion < latestVersion then
                     local message = Locales[config.language]['new_update']
-                    local discordmessage = string.sub(message, 15)
+                    local discordmessage = string.sub(message, 11)
                     print(message)
                     SendWebhook(config.webhook, discordmessage)
                 else
                     local message = Locales[config.language]['no_update']
-                    local discordmessage = string.sub(message, 15)
+                    local discordmessage = string.sub(message, 11)
                     print(message)
                     SendWebhook(config.webhook, discordmessage)
                 end
 
             else
                 local message = Locales[config.language]['update_server_error']
-                local discordmessage = string.sub(message, 15)
+                local discordmessage = string.sub(message, 11)
                 print(message)
                 SendWebhook(config.webhook, discordmessage)
             end
