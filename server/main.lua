@@ -1,3 +1,4 @@
+--[[ 
 local ResourceName = "Hive"
 local CurrentResourceName = GetCurrentResourceName()
 
@@ -21,5 +22,6 @@ AddEventHandler("onResourceStart", function()
         end
     end
 end)
+]]--
 
 AddEventHandler("playerConnecting", PlayerConnecting)
