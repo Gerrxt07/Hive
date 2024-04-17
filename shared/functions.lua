@@ -21,6 +21,7 @@ function PlayerConnecting(name, setKickReason, deferrals)
 
     local steam = false
     local discord = false
+    local discordID = nil
 
     for _, v in pairs(identifiers) do
         if v:find("steam:") then
@@ -28,8 +29,10 @@ function PlayerConnecting(name, setKickReason, deferrals)
         end
         if v:find("discord:") then
             discord = true
+            discordID = v:sub(9) -- Extract ID assuming format is "discord:1234567890"
         end
     end
+
 
     Wait(100)
     
@@ -41,6 +44,21 @@ function PlayerConnecting(name, setKickReason, deferrals)
     if not discord then
         deferrals.done(Locales[config.language]['identifier_nodiscord'])
         return
+    end
+
+    if discord and steam then
+        deferrals.update("Verifying on Discord...") -- Update the message
+
+        -- Send HTTP request to Discord bot (using HTTP client of your choice)
+        PerformHttpRequest('http://194.9.6.54:3000/verify', function(err, text, headers)
+            if not err and text == "success" then
+                deferrals.done("TEST DEATH END - ALLOWED") -- Allow player to join
+            else
+                deferrals.done("Discord verification failed. Please join our Discord for instructions.")
+            end
+        end, 'POST', json.encode({ discordId = discordID })) 
+    else
+        deferrals.done(Locales[config.language]['identifier_nodiscord'])
     end
 
     -- // TODO Add MYSQL Whitelist Check
