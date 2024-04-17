@@ -1,13 +1,6 @@
---[[ 
+
 local ResourceName = "Hive"
 local CurrentResourceName = GetCurrentResourceName()
-
-AddEventHandler('onResourceStarting', function()
-    if CurrentResourceName ~= ResourceName then
-        print('Name ist nicht Hive')
-        CancelEvent()
-    end
-end)
 
 AddEventHandler("onResourceStart", function()
     if CurrentResourceName == ResourceName then
@@ -22,6 +15,6 @@ AddEventHandler("onResourceStart", function()
         end
     end
 end)
-]]--
+
 
 AddEventHandler("playerConnecting", PlayerConnecting)
