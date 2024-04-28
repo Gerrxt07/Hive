@@ -17,6 +17,9 @@ CREATE TABLE IF NOT EXISTS `hiveuser` (
 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+
+
 -- This SQl part creates the table for the "Guard" system to save banned players.
 CREATE TABLE IF NOT EXISTS `hiveguard` (
   `ID` INT(11) NOT NULL AUTO_INCREMENT, -- Unique ID

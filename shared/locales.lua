@@ -10,9 +10,13 @@ Locales = {
         ['webhook_enabled'] = '^2[Hive]: Your Webhook is enabled.',
 
         -- Player Connecting Area
-        ['identifier_check'] = '[Hive]: Your identifiers are being checked...',
-        ['identifier_nosteam'] = '[Hive]: Steam is required to play on this server.',
-        ['identifier_nodiscord'] = '[Hive]: Discord is required to play on this server.',
+        ['connect_identifiercheck'] = '[Hive]: Your identifiers are being checked...',
+        ['connect_whitelistcheck'] = '[Hive]: Your whitelist is being checked...',
+        ['connect_advcheck'] = '[Hive]: Your status is being checked...',
+
+        ['connect_nosteam'] = '[Hive]: Steam is required to play on this server.',
+        ['connect_nodiscord'] = '[Hive]: Discord is required to play on this server.',
+        ['connect_nowhitelist'] = '[Hive]: You are not whitelisted on this server.',
     },
 
     ['de'] = {
@@ -26,8 +30,12 @@ Locales = {
         ['webhook_enabled'] = '^2[Hive]: Das Webhook System ist aktiviert.',
 
         -- Player Connecting Area
-        ['identifier_check'] = '[Hive]: Deine Profil wird überprüft...',
-        ['identifier_nosteam'] = '[Hive]: Steam ist erforderlich, um auf diesem Server zu spielen.',
-        ['identifier_nodiscord'] = '[Hive]: Discord ist erforderlich, um auf diesem Server zu spielen.',
+        ['connect_identifiercheck'] = '[Hive]: Deine Profil wird überprüft...',
+        ['connect_whitelistcheck'] = '[Hive]: Deine Whitelist wird überprüft...',
+        ['connect_advcheck'] = '[Hive]: Deine Status wird überprüft...',
+
+        ['connect_nosteam'] = '[Hive]: Steam ist erforderlich, um auf diesem Server zu spielen.',
+        ['connect_nodiscord'] = '[Hive]: Discord ist erforderlich, um auf diesem Server zu spielen.',
+        ['connect_nowhitelist'] = '[Hive]: Du bist auf diesem Server nicht auf der Whitelist.',
     }
 }

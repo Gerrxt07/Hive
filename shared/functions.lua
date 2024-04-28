@@ -12,16 +12,19 @@ function SendWebhook(webhookURL, message)
 end
 
 function PlayerConnecting(name, setKickReason, deferrals)
+
     local player = source
     local identifiers = GetPlayerIdentifiers(player)
-    
+
     deferrals.defer()
-    deferrals.update(Locales[config.language]['identifier_check'])
+    deferrals.update(Locales[config.language]['connect_identifiercheck'])
+
     Wait(1000)
 
     local steam = false
     local discord = false
-
+    local steamId = nil
+    local discordId = nil
     for _, v in pairs(identifiers) do
         if v:find("steam:") then
             steam = true
@@ -31,22 +34,41 @@ function PlayerConnecting(name, setKickReason, deferrals)
         end
     end
 
+    Wait(100)
+
+    if not steam then
+        deferrals.done(Locales[config.language]['connect_nosteam'])
+        return
+    end
+    if not discord then
+        deferrals.done(Locales[config.language]['connect_nodiscord'])
+        return
+    end
 
     Wait(100)
-    
-    if not steam then
-        deferrals.done(Locales[config.language]['identifier_nosteam'])
+
+    deferrals.update(Locales[config.language]['connect_whitelistcheck'])
+
+    function IsPlayerWhitelisted(discordId)
+        local result = MySQL.Async.fetchAll("SELECT * FROM hiveuser WHERE Discord = @discord", {
+            ["@discord"] = discordId
+        })
+        return result and #result > 0
+    end
+    if not IsPlayerWhitelisted(discordId) then
+        deferrals.done(Locales[config.language]['connect_nowhitelist'])
         return
     end
 
-    if not discord then
-        deferrals.done(Locales[config.language]['identifier_nodiscord'])
-        return
-    end
+    deferrals.update(Locales[config.language]['connect_advcheck'])
+    -- vpn check
+    -- global sys check
+    -- wartungsmodus
+    -- admin check
 
-    -- // TODO Add MYSQL Whitelist Check
-
-    deferrals.done("TEST DEATH END")
+    -- Player is allowed to Join
+    -- Warteschlange
+    deferrals.done()
 end
 
 function UpdateCheck()
